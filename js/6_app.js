@@ -42,3 +42,23 @@ document.getElementById('calculator').addEventListener('click', function (event)
         typedNumberField.value = newTypedNumber;
     }
 });
+
+document.getElementById('verity-pin').addEventListener('click', function () {
+    const displayPinField = document.getElementById('display-pin');
+    const currentPin = displayPinField.value;
+
+    const typedNumberField = document.getElementById('typed-number');
+    const typedNumber = typedNumberField.value;
+
+    const pinSuccessMessage = document.getElementById('pin-success');
+    const pinFailureMessage = document.getElementById('pin-failure');
+
+    if (typedNumber === currentPin) {
+        pinSuccessMessage.style.display = 'block';
+        pinFailureMessage.style.display = 'none';
+    }
+    else {
+        pinSuccessMessage.style.display = 'none';
+        pinFailureMessage.style.display = 'block';
+    }
+});
